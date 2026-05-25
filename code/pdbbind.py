@@ -1,10 +1,6 @@
 import numpy as np
 from scipy.spatial import cKDTree
 from scipy.spatial.distance import cdist
-import copy
-import time
-import os
-import gudhi
 import sys
 from IntComplex import get_intcomplex_feature
 
