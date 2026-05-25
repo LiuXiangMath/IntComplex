@@ -20,7 +20,7 @@ python ./code/example.py
 ```
 
 ## Protein--Ligand Binding Affinity Prediction
-Run the following command to apply the IntComplex framework to protein--ligand complex and perform the prediction task
+To apply the IntComplex framework to protein--ligand complexes and perform the binding affinity prediction task, run the following command. Before execution, please download the PDBbind dataset from https://www.pdbbind-plus.org.cn
 ```
 python ./code/pdbbind.py
 ```
