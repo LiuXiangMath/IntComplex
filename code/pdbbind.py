@@ -2,7 +2,7 @@ import numpy as np
 from scipy.spatial import cKDTree
 from scipy.spatial.distance import cdist
 import sys
-from IntComplex import get_intcomplex_feature
+from utils import get_intcomplex_feature
 
 
 
