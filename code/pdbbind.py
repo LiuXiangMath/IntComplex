@@ -160,7 +160,7 @@ class ProteinLigand:
         N = int(cutoff/step)
         
         
-        
+        '''
         # pair
         pair = np.zeros((24,N))
         
@@ -186,12 +186,12 @@ class ProteinLigand:
                     n = int(dea/step)
                     n = min(N,n)
                     pair[now,0:n] = pair[now,0:n]+1
-        
+        '''
                     
                 
         
         # multi
-        multi = np.zeros((24,N,5))
+        multi = np.zeros((24,N,3))
         lig = [ [0,1],[0,2],[0,5],[1,2],[1,5],[2,5] ]
         for i in range(4):
             index1 = self.P_Index_List[i]
@@ -206,11 +206,11 @@ class ProteinLigand:
                 atom = np.vstack([atom1,atom2])
                 w = w1.tolist()+w2.tolist()
                 
-                mulit_h1,multi_h2,layer1,layer2,layer3 = get_intcomplex_feature(atom,w,cutoff,'multi')
+                _,_,layer1,layer2,layer3 = get_intcomplex_feature(atom,w,cutoff,'multi')
                 #print(layer1['2'])
-                tmp = [mulit_h1,multi_h2,layer1,layer2,layer3]
+                tmp = [layer1,layer2,layer3]
                 now = i*6+j
-                for k in range(5):
+                for k in range(3):
                     for bar in tmp[k]:
                         bir,dea = bar
                         n1 = int(bir/step)
@@ -219,7 +219,7 @@ class ProteinLigand:
                         n2 = int(dea/step)
                         multi[now,n1:n2,k] = multi[now,n1:n2,k]+1
                 
-        np.save(self.pdb_feature_folder+self.pdb+'-pair.npy',pair)
+        #np.save(self.pdb_feature_folder+self.pdb+'-pair.npy',pair)
         np.save(self.pdb_feature_folder+self.pdb+'-multi.npy',multi)
         #print(pair.shape)
         #print(multi.shape)
