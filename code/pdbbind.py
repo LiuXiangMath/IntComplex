@@ -72,7 +72,7 @@ class ProteinLigand:
         self.read_atom_from_pdb()
         self.set_euclidean_index_list()
         self.get_int_feature(cutoff)
-        s
+        
         
     
     def read_atom_from_pdb(self):
